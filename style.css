@@ -56,22 +56,58 @@ a:visited {
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 18px;
   height: calc(100vh - 48px);
+
+  overflow-y: auto;
+  position: relative;
+}
+
+#todo::-webkit-scrollbar {
+  display: none;
 }
 #main {
-  padding: 24px;
-  padding-right: 48px;
+  
 
+  margin: 24px;
+  margin-left: 0;
+  padding: 24px;
+  padding-top: 0;
   flex-grow: 1;
-  height: 100%;
+  background-color: #101118;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  height: calc(100vh - 48px);
   overflow-y: auto;
-  margin-left: 24px;
+  position: relative;
+}
+
+#main .main{
+ 
+  height: 120px;
+  position: sticky;
+  top: 0;
+  z-index: 10; /* S'assure qu'il reste bien par-dessus le texte */
+  
+  padding:24px 0px;
+ height: 100px;
+background-color: #101118;
+}
+
+#main::-webkit-scrollbar {
+  display: none;
 }
 
 #todo #section1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
+  height: 100px;
+  position: sticky;
+  top: 0;
+  z-index: 10; /* S'assure qu'il reste bien par-dessus le texte */
+  background-color: #101118;
+  padding:24px 0px;
+
+
 }
 
 #todo #section1 p {
@@ -94,15 +130,16 @@ a:visited {
   margin-bottom: 20px;
 }
 
-#main #section1 {
+#main #logo {
   height: 60px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+ 
 }
 
-#main #section1 .left {
+#main #logo  {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -123,9 +160,9 @@ a:visited {
   box-shadow: 0 5px 5px rgba(255, 255, 255, 0.2);
 }
 
-#logo i {
+.logo i {
   color: #ffffff;
-  font-size: 30px; /* Taille de l'icône */
+  font-size: 20px; /* Taille de l'icône */
 }
 
 .text-container {
@@ -147,57 +184,57 @@ a:visited {
   color: #ffffff;
 }
 
-#main #section1 .right {
+/* #main #section1 .right {
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  gap: 20px;
+  justify-content: space-between;
+} */
+#main #logo  .navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
 }
-#main #section1 .right .profile {
+
+#main #logo .profile {
   height: 60px;
   width: 60px;
   border-radius: 50px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background-color: #101118;
   border: 1px solid rgba(255, 255, 255, 0.06);
-
   color: #e0e7ff;
   font-weight: 600;
   font-size: 16px;
 }
-#main #section1 .right .profile p {
+#main #logo  .profile p {
   font-size: 16px;
 }
 
-#main #section1 .right .state {
+#main #logo  .navbar .navelement{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px;
-  padding: 0 80px;
+  
+  /* padding: 0 40px; */
   height: 60px;
-
+  width: 150px;
   border-radius: 20px;
   background-color: #101118;
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
-.state-title {
+#main #logo  .navbar .navelement {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #94a3b8;
 }
-.explication {
-  font-size: 20px;
-  font-weight: 500;
-  color: #ffffff;
-}
 
-/* ----------------------- SECION 2------------------------ */
+
+/* ----------------------- SEssION 2------------------------ */
 #main #section2 {
   display: flex;
   align-items: center;
@@ -258,11 +295,8 @@ a:visited {
   margin: 4px 0;
 }
 
-
-
 /* --------------------main-section" */
 #main #main-section {
-
   flex-shrink: 0;
   margin-top: 8px;
   background-color: #101118;
@@ -272,7 +306,6 @@ a:visited {
 
   padding: 0 24px 24px 24px;
 }
-
 
 #main-section .title {
   display: flex;
